@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const { chromium } = require("playwright");
 
 async function run() {
@@ -8,7 +10,8 @@ async function run() {
   await page.waitForSelector('[data-testid="post-title"]');
   // can see login button
   await page.waitForSelector('[data-testid="intro-signin-button"]');
-  await page.screenshot({ path: "home-page.jpg" });
+  await page.screenshot({ path: "screenshots/home-page.jpg" });
+
   await page.close();
   await browser.close();
 }
