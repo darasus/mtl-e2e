@@ -5,7 +5,7 @@ const { chromium } = require("playwright");
 async function run() {
   const browser = await chromium.launch({ headless: false });
   const page = await browser.newPage();
-  await page.goto(process.env.BASE_URL);
+  await page.goto(process.env.ENVIRONMENT_URL);
   await page.click('[data-testid="intro-signin-button"]');
 
   await page.type("input[id=username]", process.env.USERNAME);
